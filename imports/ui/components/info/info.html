@@ -1,15 +1,22 @@
 <template name="info">
   <h2>Learn Meteor!</h2>
+  <form class="info-link-add">
+    <input type="text" name="title" placeholder="Title" required>
+    <input type="url" name="url" placeholder="Url" required>
+    <input type="submit" name="submit" value="Add new link">
+  </form>
+
+  <pre style="background-color: azure">Subscription Info: {{subsInfo}}</pre>
+
   <ul>
-    <li>
-      <form class="info-link-add">
-        <input type="text" name="title" placeholder="Title" required>
-        <input type="url" name="url" placeholder="Url" required>
-        <input type="submit" name="submit" value="Add new link">
-      </form>
-    </li>
     {{#each links}}
       <li><a href="{{url}}" target="_blank">{{title}}</a></li>
     {{/each}}
   </ul>
+  <h3>Change subscription: </h3>
+  <label>
+    Search by title:
+    <input class="filter" type="text">
+  </label>
+
 </template>
